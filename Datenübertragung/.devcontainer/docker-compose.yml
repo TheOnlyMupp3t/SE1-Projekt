@@ -1,0 +1,33 @@
+version: "3.2"
+services:
+  python:
+    # Uncomment the next line to use a non-root user for all processes.
+    # See https://aka.ms/vscode-remote/containers/non-root for details.
+    # user: node
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Update VARIANT to pick a python versions: 3.7, 3.8, 3.9
+        VARIANT: "3.9"
+        INSTALL_NODE: "false"
+        NODE_VERSION: "lts/*"
+
+    volumes:
+      - ..:/workspace:cached
+
+    # Overrides default command so things don't shut down after the process ends.
+    command: sleep infinity
+    
+    links:
+      - mongo
+
+  mongo:
+    image: mongo
+    restart: unless-stopped
+    ports:
+      - 27017:27017
+    volumes:
+      - /data/db
+volumes:
+  datenueberwachung_data:

@@ -11,7 +11,10 @@ Wir empfangen von Alarmierungsgruppe ein Objekt Alarm mit Parametern:   vorzugsw
 - Wahrscheinlichkeit eines Angriffs
 - (ob automatische Reaktion stattgefunden hat, und welche)
 - (Link zur richtigen Checkliste)
+- (evtl: alle berechneten Angriffswahrscheinlichkeiten + Info und Flag wenn Alarm ausgelöst wurde)
 
 Implementierung der simplen grafischen Oberfläche in native CSS mithilfe von bootstrap o.ä. 
 
-
+Alarm Darstellung
+- Farbkodierung der Eintrittswahrscheinlichkeit, Deaktiviert -> grau
+- 7-Tage Verlauf Ansicht (Angriffswahrscheinlichkeiten, die keinen Alarm ausgelöst haben)

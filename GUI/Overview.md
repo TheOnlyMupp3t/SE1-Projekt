@@ -9,9 +9,9 @@ Wir empfangen von Alarmierungsgruppe ein Objekt Alarm mit Parametern:   vorzugsw
 - betroffene Systeme
 - vermuteter Angriffstyp
 - Wahrscheinlichkeit eines Angriffs
-- (ob automatische Reaktion stattgefunden hat, und welche)
-- (Link zur richtigen Checkliste)
-- (evtl: alle berechneten Angriffswahrscheinlichkeiten + Info und Flag wenn Alarm ausgelöst wurde)
+- ob automatische Reaktion stattgefunden hat, und welche
+- Checkliste
+WICHTIG: Es werden alle potenziellen Alarme ab einer Wahrscheinlichkeit von 10% weitergeleitet, unsere GUI wird zwischen <75% und >75% entscheiden
 
 Implementierung der simplen grafischen Oberfläche in native CSS mithilfe von bootstrap o.ä. 
 

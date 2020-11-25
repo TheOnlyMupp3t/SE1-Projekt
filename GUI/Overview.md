@@ -4,7 +4,7 @@ Aus dem Pflichtenheft:
 
 Stellt SKS-F eine Abweichung in einem Datensystemen fest, so soll eine Korrelation mit den anderen Datensystemen durchgeführt werden. Wird dabei festgestellt, dass ein Angriff mit 75% Wahrscheinlichkeit vorliegt, ist ein entsprechender Alarm auszulösen. Der Alarm muss mindestens den Zeitpunkt der Detektion, die betroffenen Systeme, den vermuteten Angriffstyp und die Wahrscheinlichkeit für einen vorsätzlichen digitalen Angriff beinhalten. Der Alarm muss auf einer zu erstellenden grafischen Oberfläche angezeigt werden. Diese grafische Oberfläche muss sowohl von unseren Mitarbeitern in den Büros und Verkehrszentralen, wie auch unseren Sicherheitskräften im Terminal und dem Flughafengelände aufrufbar sein.
 
-Wir empfangen von Alarmierungsgruppe ein Objekt Alarm mit Parametern:   vorzugsweise JSON
+Wir empfangen von Alarmierungsgruppe ein Objekt Alarm mit Parametern: 
 - Zeitpunkt der Detektion
 - betroffene Systeme
 - vermuteter Angriffstyp
@@ -13,6 +13,19 @@ Wir empfangen von Alarmierungsgruppe ein Objekt Alarm mit Parametern:   vorzugsw
 - (Link zur richtigen Checkliste)
 - (evtl: alle berechneten Angriffswahrscheinlichkeiten + Info und Flag wenn Alarm ausgelöst wurde)
 
+Das erwartete JSON:
+```
+var event = {
+        "id": id,                                   // Zahl (Auto-Inkrement)
+        "time": time,                               // String
+        "date": date,                               // String
+        "affectedSystems": affectedSystems,         // Array von Strings
+        "suspectedAttackType": suspectedAttackType, // String
+        "probability": probability,                 // Zahl (10-100) (Zusendung von jedem Event ab 10% Probability)
+        "automaticReaction": automaticReaction,     // Array von Strings
+        "checklist": checklist                      // Array von Strings
+    };
+```
 Implementierung der simplen grafischen Oberfläche in native CSS mithilfe von bootstrap o.ä. 
 
 Alarm Darstellung

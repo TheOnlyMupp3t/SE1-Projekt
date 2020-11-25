@@ -11,7 +11,22 @@ Wir empfangen von Alarmierungsgruppe ein Objekt Alarm mit Parametern:   vorzugsw
 - Wahrscheinlichkeit eines Angriffs
 - ob automatische Reaktion stattgefunden hat, und welche
 - Checkliste
+
 WICHTIG: Es werden alle potenziellen Alarme ab einer Wahrscheinlichkeit von 10% weitergeleitet, unsere GUI wird zwischen <75% und >75% entscheiden
+
+Das erwartete JSON:
+```
+var event = {
+        "id": id,                                   // Zahl (Auto-Inkrement)
+        "time": time,                               // String
+        "date": date,                               // String
+        "affectedSystems": affectedSystems,         // Array von Strings
+        "suspectedAttackType": suspectedAttackType, // String
+        "probability": probability,                 // Zahl (10-100) (Zusendung von jedem Event ab 10% Probability)
+        "automaticReaction": automaticReaction,     // Array von Strings
+        "checklist": checklist                      // Array von Strings
+    };
+```
 
 Implementierung der simplen grafischen Oberfläche in native CSS mithilfe von bootstrap o.ä. 
 

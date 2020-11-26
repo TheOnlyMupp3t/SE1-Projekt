@@ -12,11 +12,11 @@ class Endpoints(Enum):
 
 class ApiRequest():
     def __init__(self):
-        self.host = config['DEFAULT']['host']
-        self.port = config['DEFAULT']['port']
-        self.protocol = config['DEFAULT']['protocol']
-        self.username = config['DEFAULT']['username']
-        self.password = config['DEFAULT']['password']
+        self.host = config['DATA-API']['host']
+        self.port = config['DATA-API']['port']
+        self.protocol = config['DATA-API']['protocol']
+        self.username = config['DATA-API']['username']
+        self.password = config['DATA-API']['password']
 
     def get(self, endpoint):
         """
@@ -28,7 +28,7 @@ class ApiRequest():
         if (self.protocol == "https"):
             c = HTTPSConnection(self.host, int(self.port))
         else:
-            # default - use not encrypted connection
+            # DATA-API - use not encrypted connection
             c = HTTPConnection(self.host, int(self.port))
         
         # prepare authorization header

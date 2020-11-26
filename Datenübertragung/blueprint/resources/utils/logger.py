@@ -1,3 +1,5 @@
+from .config import config
+
 class Logger:
     __lvl_dic = { "DEBUG" : 1, "LOG" : 2, "ERROR" : 3 }
     
@@ -31,6 +33,16 @@ class Logger:
         print(level + ": " + msg)
         
     def __logFile(self, level, msg):
-        log_file = open("log.txt","a+")
+        log_file = open(config['LOGGER']['file'],"a+")
         log_file.write(level + ": " + msg + "\n")
-        log_file.close
+        log_file.close()
+
+loggerFile = Logger(int(config['LOGGER']['level']))
+
+# debug Logger-class
+if __name__ == '__main__':
+    print('*'*10 + ' Debug: Logger ' + '*'*10 )
+    loggerFile.log('Dies ist ein Testlog')
+    loggerFile.error('Dies ist ein Testerror')
+    loggerFile.debug('Dies ist ein Testdebug')
+    

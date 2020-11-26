@@ -1,20 +1,19 @@
-from flask import Flask, escape, request, jsonify, render_template
-from flask_socketio import SocketIO, emit
-from logger import Logger
+from flask import Flask, render_template
+from flask_socketio import SocketIO
+from ..utils import loggerFile
 
 app = Flask(__name__)
-socketio = SocketIO(app)
-logger = Logger()
 
-if __name__ == '__main__':
-    socketio.run(app)
+socketio = SocketIO(app)
+
+socketio.run(app)
 
 def send_alert(data):
     """
     entrypoint to notify frontend about alters
     """
     socketio.emit('alert', data)
-    logger.debug('Sent alert to socket')
+    loggerFile.debug('Sent alert to socket')
 
 @app.route('/', methods=['GET'])
 def index():
@@ -22,7 +21,7 @@ def index():
     Plain html site that loggs socket events to browser console
     ToDo: Remove before production
     """
-    return render_template('index.html')
+    return render_template('./index.html')
 
 @app.route('/test', methods=['GET'])
 def send_example_alert():

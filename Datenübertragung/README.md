@@ -27,6 +27,8 @@ Diese Datei wird nicht in git getrackt und dient dazu Konfigurationen und Passw�
 
 Ob die Config richtig gelesen wurde, kanns du jederzeit mit `python3 -m blueprint.resources.utils.config` (working-dir: `Datenübertragung/`) überprüfen. 
 
+> *Achtung*: Wer die Docker-Remote-Development-Methode verwendet muss `mongo` als DB-Host angeben
+
 ### Datenverarbeitung
 Für die Datenverarbeitung steht die Klasse `ApiRequest` in `resources/api.py` bereit. Diese kann beliebig importiert werden.
 

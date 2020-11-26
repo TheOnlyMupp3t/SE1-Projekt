@@ -1,4 +1,5 @@
 import blueprint.resources.utils.api as Api
+import blueprint.resources.server
 
 class Blueprint:
 
@@ -8,5 +9,5 @@ class Blueprint:
         # how to use - example
         api = Api.ApiRequest()
         data = api.get(Api.Endpoints.IT)
+        print(data)
         
-        print("Hello World...")

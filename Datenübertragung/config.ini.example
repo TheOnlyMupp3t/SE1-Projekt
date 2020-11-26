@@ -1,0 +1,6 @@
+[DEFAULT]
+protocol = http
+host = example.de
+port = 10001
+username = kurs
+password = [password. Das %-Zeichen muss durch %% ersetzt werden]

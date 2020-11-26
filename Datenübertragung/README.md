@@ -18,3 +18,8 @@ Solltest du dir nicht Docker installieren wollen, benötigst du folgende Softwar
 - MongoDB
 
 Suche online einfach nach verfügbaren Anleitungen und installiere die entsprechende Software!
+
+## Programmieren
+
+### Datenverarbeitung
+Für die Datenverarbeitung steht die Klasse `ApiRequest` in `resources/api.py` bereit. Diese kann beliebig importiert werden.

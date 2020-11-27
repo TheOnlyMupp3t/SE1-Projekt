@@ -6,7 +6,7 @@ class DatabaseManager():
 
     @staticmethod
     def write(documentType, data):
-        if (documentType == 'it'):
+        if (documentType == it):
             document = ItSchema(**data)
             document.save()
 

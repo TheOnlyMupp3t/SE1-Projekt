@@ -14,7 +14,7 @@ Solltest du **VS Code** zum Programmieren nutzten, kannst du alles was du benöt
 Solltest du dir nicht Docker installieren wollen, benötigst du folgende Software zum Programmieren:
 
 - Python 3.9 (vllt geht auch 3.8)
-- MongoDB
+- Postgres SQL
 
 Suche online einfach nach verfügbaren Anleitungen und installiere die entsprechende Software!
 
@@ -26,7 +26,7 @@ Diese Datei wird nicht in git getrackt und dient dazu Konfigurationen und Passw�
 
 Ob die Config richtig gelesen wurde, kanns du jederzeit mit `python3 -m blueprint.resources.utils.config` (working-dir: `Datenübertragung/`) überprüfen. 
 
-> *Achtung*: Wer die Docker-Remote-Development-Methode verwendet muss `mongo` als DB-Host angeben
+> *Achtung*: Wer die Docker-Remote-Development-Methode verwendet muss `postgres` als DB-Host angeben
 
 ### Datenverarbeitung
 Für die Datenverarbeitung steht die Klasse `ApiRequest` in `resources/api.py` bereit. Diese kann beliebig importiert werden.

@@ -20,14 +20,14 @@ services:
     command: sleep infinity
     
     links:
-      - mongo
+      - postgres
 
-  mongo:
-    image: mongo
+  postgres:
+    image: postgres
     restart: unless-stopped
     ports:
-      - 27017:27017
+      - 5432:5432
     volumes:
-      - /data/db
+      - /var/lib/postgresql/data
 volumes:
   datenueberwachung_data:
